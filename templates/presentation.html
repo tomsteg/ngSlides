@@ -1,7 +1,7 @@
 <div class="presentation">
 	<div class="slides" ng-transclude></div>
-	<div class="controlButtons">
-		<a href="#" ng-click="prevSlide()" ng-keydown="$event.which === 74 && prevSlide()">&lt;</a>
-		<a href="#" ng-click="nextSlide()" ng-keydown="$event.which === 75 && nextSlide()">&gt;</a>
+	<div class="controlButtons" ng-keydown="handleKeys($event)">
+		<a href="#" ng-click="prevSlide()">&lt;</a>
+		<a href="#" ng-click="nextSlide()">&gt;</a>
 	</div>
 </div>

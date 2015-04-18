@@ -32,6 +32,15 @@
 			slide.selected = true;
 			activeSlide = slide;
 		};
+		 
+		$scope.handleKeys = function (event) {
+			if (event.which === 74) { // j
+				$scope.prevSlide();
+			}
+			if (event.which === 75) { // k
+				$scope.nextSlide();
+			}
+		};
 
 		this.addSlide = function (slide) {
 			var total;
