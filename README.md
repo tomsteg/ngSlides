@@ -2,7 +2,7 @@
 
 With ngSlides I want to provide a possiblity to write easily slides for a presentation using html.
 
-In a single html-file a presentation is segmentet like this:
+In a single html-file a presentation is segmented like this:
 
 	<presentation>
 		<slide>
