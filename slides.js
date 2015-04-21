@@ -34,10 +34,10 @@
 		};
 		 
 		$scope.handleKeys = function (event) {
-			if (event.which === 74) { // j
+			if (event.which === 74) { // for key j
 				$scope.prevSlide();
 			}
-			if (event.which === 75) { // k
+			if (event.which === 75) { // for key k
 				$scope.nextSlide();
 			}
 		};
