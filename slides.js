@@ -32,7 +32,7 @@
 			slide.selected = true;
 			activeSlide = slide;
 		};
-		 
+
 		$scope.handleKeys = function (event) {
 			if (event.which === 74) { // for key j
 				$scope.prevSlide();
