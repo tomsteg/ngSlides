@@ -6,27 +6,28 @@
 
 	angular.module('slidesApp', [])
 
-	.controller('PresentationCtrl', ['$scope', function ($scope) {
+	.controller('PresentationCtrl', ['$scope', '$location', function ($scope, $location) {
 
-		var slides = [],
-			activeSlide;
+		var activeSlide;
+
+		$scope.slides = [];
 
 		$scope.prevSlide = function() {
 			var activeSlideNo = activeSlide.no;
 			if (activeSlideNo > 1) {
-				$scope.selectSlide(slides[activeSlideNo - 2]);
+				$scope.selectSlide($scope.slides[activeSlideNo - 2]);
 			}
 		};
 
 		$scope.nextSlide = function() {
 			var activeSlideNo = activeSlide.no;
-			if (activeSlideNo < (slides.length)) {
-				$scope.selectSlide(slides[activeSlideNo]);
+			if (activeSlideNo < ($scope.slides.length)) {
+				$scope.selectSlide($scope.slides[activeSlideNo]);
 			}
 		};
 
 		$scope.selectSlide = function (slide) {
-			angular.forEach(slides, function(slide){
+			angular.forEach($scope.slides, function(slide){
 				slide.selected = false;
 			});
 			slide.selected = true;
@@ -44,19 +45,19 @@
 
 		this.addSlide = function (slide) {
 			var total;
-			if (slides.length === 0) {
+			total = $scope.slides.push(slide);
+			slide.no = total;
+			if ($scope.slides.length === 1 || parseInt($location.search().slideNo, 10) === slide.no) {
 				$scope.selectSlide(slide);
 			}
-			total = slides.push(slide);
-			slide.no = total;
 		};
 
 		this.getTotal = function () {
-			return slides.length;
+			return $scope.slides.length;
 		};
 	}])
 
-	.directive('presentation', function () {
+	.directive('presentation', function ($location) {
 		return {
 			restrict: 'E',
 			scope: true,

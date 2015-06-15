@@ -4,6 +4,16 @@ body {
 	font-family: 'Fira Sans', sans-serif;
 }
 
+h1 {
+	color: #d30134;
+	font-size: 3em;
+}
+
+h2 {
+	color: #d30134;
+	font-size: 2em;
+}
+
 .presentation,
 .slides {
 	width: 100%;

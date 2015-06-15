@@ -1,7 +1,7 @@
-<div class="presentation">
+<div class="presentation" ng-keydown="handleKeys($event)">
 	<div class="slides" ng-transclude></div>
 	<div class="controlButtons">
-		<a href="#" ng-click="prevSlide()" ng-keydown="handleKeys($event)">&lt;</a>
-		<a href="#" ng-click="nextSlide()" ng-keydown="handleKeys($event)">&gt;</a>
+		<a href="#" ng-click="prevSlide()">&lt;</a>
+		<a href="#" ng-click="nextSlide()">&gt;</a>
 	</div>
 </div>

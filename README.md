@@ -15,3 +15,6 @@ In a single html-file a presentation is segmented like this:
 	
 With the angularjs controllers there are control-buttons and -keys provided to cicle throught the slides.
 Also the number of the actual slide and the number of all slides are displayed.
+
+You can jump to slide number x by adding the following to the url:
+#?slideNo=x
