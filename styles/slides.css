@@ -14,6 +14,10 @@ h2 {
 	font-size: 2em;
 }
 
+pre {
+	font-size: 1.5em;
+}
+
 .presentation,
 .slides {
 	width: 100%;
@@ -46,4 +50,8 @@ h2 {
 .controlButtons a {
 	text-decoration: none;
 	padding: 2em 0.5em;
+}
+
+.op {
+	color: blue;
 }
