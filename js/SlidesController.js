@@ -1,6 +1,6 @@
 angular.module('slidesApp')
 
-.controller('PresentationCtrl', ['$scope', '$location', function ($scope, $location) {
+.controller('PresentationCtrl', function ($scope, $location, $document) {
 
 	'use strict';
 
@@ -22,6 +22,14 @@ angular.module('slidesApp')
 		}
 	};
 
+	$scope.lastSlide = function() {
+		$scope.selectSlide($scope.slides[$scope.slides.length - 1]);
+	};
+
+	$scope.firstSlide = function() {
+		$scope.selectSlide($scope.slides[0]);
+	};
+
 	$scope.selectSlide = function (slide) {
 		angular.forEach($scope.slides, function(slide){
 			slide.selected = false;
@@ -30,14 +38,21 @@ angular.module('slidesApp')
 		activeSlide = slide;
 	};
 
-	$scope.handleKeys = function (event) {
-		if (event.which === 74) { // for key j
+	$document.bind('keypress', function (event) {
+		if (event.which === 104) { // ascii code for key h
+			$scope.firstSlide();
+		}
+		if (event.which === 106) { // ascii code for key j
 			$scope.prevSlide();
 		}
-		if (event.which === 75) { // for key k
+		if (event.which === 107) { // ascii code for key k
 			$scope.nextSlide();
 		}
-	};
+		if (event.which === 108) { // ascii code for key l
+			$scope.lastSlide();
+		}
+		$scope.$apply();
+	});
 
 	this.addSlide = function (slide) {
 		var total;
@@ -51,5 +66,5 @@ angular.module('slidesApp')
 	this.getTotal = function () {
 		return $scope.slides.length;
 	};
-}]);
+});
 

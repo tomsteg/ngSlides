@@ -3,9 +3,11 @@ module.exports = function (grunt) {
 	'use strict';
 
 	var files = [
-		'js/**/*Module.js',
-		'js/**/*.js'
-	];
+			'bower_components/jquery/jquery.js',
+			'bower_components/angularjs/angular.js',
+			'js/**/*Module.js',
+			'js/**/*.js'
+		];
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
@@ -47,7 +49,6 @@ module.exports = function (grunt) {
 		uglify: {
 			dist: {
 				src: [
-					'bower_components/angularjs/angular.js',
 					'build/ngSlides.annotated.js'
 				],
 				dest: 'build/ngSlides.min.js'
@@ -82,7 +83,7 @@ module.exports = function (grunt) {
 				src: 'Gruntfile.js'
 			},
 			lib_test: {
-				src: files
+				src: 'js/**/*.js'
 			}
 		}
 	});
