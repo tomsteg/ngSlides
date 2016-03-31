@@ -37,7 +37,7 @@ angular.module('slidesApp')
 		activeSlide = slide;
 		$scope.activeSlideNo = activeSlide.no;
 	};
-	
+
 	$scope.updateActiveSlide = function() {
 		angular.forEach($scope.slides, function(slide) {
 			slide.selected = false;
@@ -45,20 +45,25 @@ angular.module('slidesApp')
 				activeSlide = slide;
 			}
 		});
-		activeSlide.selected = true; 
+		activeSlide.selected = true;
 	};
 
 	$document.bind('keydown', function (event) {
-		if (event.keyCode === 72 || event.keyCode === 38) { // ascii code for key h
+		//console.log(event.keyCode);
+		// key code for key h
+		if (event.keyCode === 72 || event.keyCode === 38) {
 			$scope.firstSlide();
 		}
-		if (event.keyCode === 74 || event.keyCode === 37) { // ascii code for key j || Pfeil links
+		// key code for key j || Pfeil links || Fernbedienung links
+		if (event.keyCode === 74 || event.keyCode === 37 || event.keyCode === 33) {
 			$scope.prevSlide();
 		}
-		if (event.keyCode === 75 || event.keyCode === 39) { // ascii code for key k || Pfeil rechts
+		// key code for key k || Pfeil rechts || Fernbedienung rechts
+		if (event.keyCode === 75 || event.keyCode === 39 || event.keyCode === 34) {
 			$scope.nextSlide();
 		}
-		if (event.keyCode === 76 || event.keyCode === 40) { // ascii code for key l
+		// ascii code for key l
+		if (event.keyCode === 76 || event.keyCode === 40) {
 			$scope.lastSlide();
 		}
 		$scope.$apply();
@@ -77,4 +82,3 @@ angular.module('slidesApp')
 		return $scope.slides.length;
 	};
 });
-
