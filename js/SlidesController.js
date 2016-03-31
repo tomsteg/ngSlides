@@ -48,17 +48,17 @@ angular.module('slidesApp')
 		activeSlide.selected = true; 
 	};
 
-	$document.bind('keypress', function (event) {
-		if (event.which === 104) { // ascii code for key h
+	$document.bind('keydown', function (event) {
+		if (event.keyCode === 72 || event.keyCode === 38) { // ascii code for key h
 			$scope.firstSlide();
 		}
-		if (event.which === 106) { // ascii code for key j
+		if (event.keyCode === 74 || event.keyCode === 37) { // ascii code for key j || Pfeil links
 			$scope.prevSlide();
 		}
-		if (event.which === 107) { // ascii code for key k
+		if (event.keyCode === 75 || event.keyCode === 39) { // ascii code for key k || Pfeil rechts
 			$scope.nextSlide();
 		}
-		if (event.which === 108) { // ascii code for key l
+		if (event.keyCode === 76 || event.keyCode === 40) { // ascii code for key l
 			$scope.lastSlide();
 		}
 		$scope.$apply();
