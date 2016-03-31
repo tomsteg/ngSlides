@@ -52,6 +52,20 @@ pre {
 	padding: 2em 0.5em;
 }
 
+.controlButtons input {
+	width: 4em;
+	text-align: right;
+}
+
 .op {
 	color: blue;
+}
+
+.big {
+	font-size: 3em;
+	text-align: center;
+	padding-top: 3em;
+}
+.center {
+	text-align: center;
 }

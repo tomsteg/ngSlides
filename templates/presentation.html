@@ -3,6 +3,7 @@
 	<div class="controlButtons">
 		<a href="#" ng-click="firstSlide()">&lt;&lt;</a>
 		<a href="#" ng-click="prevSlide()">&lt;</a>
+		<input type="text" ng-model="activeSlideNo" ng-change="updateActiveSlide()">&nbsp;/&nbsp;{{slides.length}}
 		<a href="#" ng-click="nextSlide()">&gt;</a>
 		<a href="#" ng-click="lastSlide()">&gt;&gt;</a>
 	</div>

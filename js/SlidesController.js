@@ -7,18 +7,19 @@ angular.module('slidesApp')
 	var activeSlide;
 
 	$scope.slides = [];
+	$scope.activeSlideNo = 1;
 
 	$scope.prevSlide = function() {
-		var activeSlideNo = activeSlide.no;
-		if (activeSlideNo > 1) {
-			$scope.selectSlide($scope.slides[activeSlideNo - 2]);
+		$scope.activeSlideNo = activeSlide.no;
+		if ($scope.activeSlideNo > 1) {
+			$scope.selectSlide($scope.slides[$scope.activeSlideNo - 2]);
 		}
 	};
 
 	$scope.nextSlide = function() {
-		var activeSlideNo = activeSlide.no;
-		if (activeSlideNo < ($scope.slides.length)) {
-			$scope.selectSlide($scope.slides[activeSlideNo]);
+		$scope.activeSlideNo = activeSlide.no;
+		if ($scope.activeSlideNo < ($scope.slides.length)) {
+			$scope.selectSlide($scope.slides[$scope.activeSlideNo]);
 		}
 	};
 
@@ -31,11 +32,21 @@ angular.module('slidesApp')
 	};
 
 	$scope.selectSlide = function (slide) {
-		angular.forEach($scope.slides, function(slide){
+		angular.forEach($scope.slides, function(slide) {
 			slide.selected = false;
 		});
 		slide.selected = true;
 		activeSlide = slide;
+	};
+	
+	$scope.updateActiveSlide = function() {
+		angular.forEach($scope.slides, function(slide) {
+			slide.selected = false;
+			if (slide.no === parseInt($scope.activeSlideNo, 10)) {
+				activeSlide = slide;
+			}
+		});
+		activeSlide.selected = true; 
 	};
 
 	$document.bind('keypress', function (event) {
