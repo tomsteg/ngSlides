@@ -10,14 +10,12 @@ angular.module('slidesApp')
 	$scope.activeSlideNo = 1;
 
 	$scope.prevSlide = function() {
-		$scope.activeSlideNo = activeSlide.no;
 		if ($scope.activeSlideNo > 1) {
 			$scope.selectSlide($scope.slides[$scope.activeSlideNo - 2]);
 		}
 	};
 
 	$scope.nextSlide = function() {
-		$scope.activeSlideNo = activeSlide.no;
 		if ($scope.activeSlideNo < ($scope.slides.length)) {
 			$scope.selectSlide($scope.slides[$scope.activeSlideNo]);
 		}
@@ -37,6 +35,7 @@ angular.module('slidesApp')
 		});
 		slide.selected = true;
 		activeSlide = slide;
+		$scope.activeSlideNo = activeSlide.no;
 	};
 	
 	$scope.updateActiveSlide = function() {
