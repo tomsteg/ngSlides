@@ -39,6 +39,9 @@ angular.module('slidesApp')
 	};
 
 	$scope.updateActiveSlide = function() {
+		if (parseInt($scope.activeSlideNo, 10) <= 0 || parseInt($scope.activeSlideNo, 10) > $scope.slides.length) {
+			$scope.activeSlideNo = '1';
+		}
 		angular.forEach($scope.slides, function(slide) {
 			slide.selected = false;
 			if (slide.no === parseInt($scope.activeSlideNo, 10)) {
