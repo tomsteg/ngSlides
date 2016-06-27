@@ -31,9 +31,9 @@ angular.module('slidesApp')
 
 	$scope.selectSlide = function (slide) {
 		angular.forEach($scope.slides, function(slide) {
-			slide.selected = false;
+			slide.selected = 'not-active';
 		});
-		slide.selected = true;
+		slide.selected = 'active';
 		activeSlide = slide;
 		$scope.activeSlideNo = activeSlide.no;
 	};
@@ -43,7 +43,7 @@ angular.module('slidesApp')
 			$scope.activeSlideNo = '1';
 		}
 		angular.forEach($scope.slides, function(slide) {
-			slide.selected = false;
+			slide.selected = 'not-active';
 			if (slide.no === parseInt($scope.activeSlideNo, 10)) {
 				activeSlide = slide;
 			}

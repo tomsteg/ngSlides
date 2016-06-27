@@ -32,6 +32,14 @@ pre {
 	height: 90%;
 }
 
+.slide.not-active {
+	display: none;
+}
+
+.slide.active {
+	display: block;
+}
+
 .presentation,
 .slide {
 	position: relative;
@@ -72,4 +80,50 @@ pre {
 }
 .center {
 	text-align: center;
+}
+
+.embed-responsive.embed-responsive-16by9 {
+	padding-bottom: 56.25%;
+}
+
+.embed-responsive {
+	position: relative;
+	display: block;
+	height: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.embed-responsive .embed-responsive-item,
+.embed-responsive iframe,
+.embed-responsive embed,
+.embed-responsive object {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+	border: 0;
+}
+
+@media only print {
+	.controlButtons {
+		display: none;
+	}
+	presentation,
+	slides,
+	slide,
+	.presentation,
+	.slides,
+	.slide {
+		height: auto;
+	}
+	.slide {
+		border-bottom: 1px solid grey;
+	}
+	slide.not-active,
+	.slide.not-active {
+		display: block;
+	}
 }
