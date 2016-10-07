@@ -20,6 +20,22 @@ pre {
 	font-size: 1.5em;
 }
 
+img {
+	max-width: 100%;
+}
+
+.img-50 {
+	width: 50%;
+}
+
+blockquote {
+	font-style: oblique;
+}
+
+blockquote.author {
+	text-align: right;
+}
+
 .presentation,
 .slides {
 	width: 100%;
@@ -38,6 +54,13 @@ pre {
 
 .slide.active {
 	display: block;
+}
+
+.centered,
+.centered.active {
+	display: flex;
+  	align-items: center;
+	justify-content: center;
 }
 
 .presentation,
@@ -71,6 +94,10 @@ pre {
 
 .op {
 	color: blue;
+}
+
+.quelle {
+	font-size: 0.5em;
 }
 
 .big {
