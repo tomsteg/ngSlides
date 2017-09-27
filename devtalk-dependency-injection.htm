@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>devtalk - 10 Tipps für eine bessere Konversation</title>
+	<link rel="stylesheet" type="text/css" href="styles/slides.css" />
+</head>
+<body ng-app="slidesApp">
+
+<presentation>
+
+	<slide>
+		<h1>devtalk</h1>
+		<h2>dependency injection</h2>
+	</slide>
+
+	<slide>
+		<h1>What is dependency injection?</h1>
+		<p>In software engineering, dependency injection is a software design pattern that implements inversion of control for resolving dependencies. A dependency is an object that can be used (a service). An injection is the passing of a dependency to a dependent object (a client) that would use it. The service is made part of the client's state. Passing the service to the client, rather than allowing a client to build or find the service, is the fundamental requirement of the pattern.</p>
+		<p><i><a target="_blank" href="https://en.wikipedia.org/wiki/Dependency_injection">https://en.wikipedia.org/wiki/Dependency_injection</a></i></p>
+	</slide>
+
+	<slide>
+		<h1>Was ist dependency injection?</h1>
+		<p>Als Dependency Injection (englisch dependency ‚Abhängigkeit‘ und injection ‚Injektion‘; Abkürzung DI) wird in der objektorientierten Programmierung ein Entwurfsmuster bezeichnet, welches die Abhängigkeiten eines Objekts zur Laufzeit reglementiert: Benötigt ein Objekt beispielsweise bei seiner Initialisierung ein anderes Objekt, ist diese Abhängigkeit an einem zentralen Ort hinterlegt – es wird also nicht vom initialisierten Objekt selbst erzeugt.</p>
+		<p><i><a target="_blank" href="https://de.wikipedia.org/wiki/Dependency_Injection">https://de.wikipedia.org/wiki/Dependency_Injection</a></i></p>
+	</slide>
+
+	<slide>
+		<h3>design pattern?</h3>
+		<ul>
+			<li>nicht erwähnt in ‚Design Patterns‘ von Gamma, Helm, Johnson, Vlissides (2005)</li>
+			<li>2004 vom Softwareentwickler Martin Fowler eingeführt</li>
+		</ul>
+	</slide>
+
+	<slide>
+		<h2>Dependency injection for five-year-olds</h2>
+			<p> When you go and get things out of the refrigerator for yourself, you can cause problems. You might leave the door open, you might get something Mommy or Daddy doesn't want you to have. You might even be looking for something we don't even have or which has expired.  </p>
+			<p> What you should be doing is stating a need, "I need something to drink with lunch," and then we will make sure you have something when you sit down to eat.  </p>
+			<p> <i>John Munsch, 28 October 2009.</i>  </p>
+	</slide>
+
+	<slide>
+		<h2>dependency injection by stackoverflow</h2>
+			<h3> Let's imagine that you want to go fishing</h3>
+			<p> Without dependency injection, you need to take care of everything yourself. You need to find a boat, to buy a fishing rod, to look for bait, etc. It's possible, of course, but it puts a lot of responsibility on you. In software terms, it means that you have to perform a lookup for all these things.  </p>
+			<p> With dependency injection, someone else takes care of all the preparation and makes the required equipment available to you. You will receive ("be injected") the boat, the fishing rod and the bait - all ready to use.  </p>
+			<p><i><a target="_blank" href="http://stackoverflow.com/questions/130794/what-is-dependency-injection">http://stackoverflow.com/questions/130794/what-is-dependency-injection</a></i></p>
+	</slide>
+
+	<slide>
+		<h2>Warum dependency injection?</h2>
+		<ul>
+			<li>Die Systeme werden komplexer. => Die Abhängigkeiten nehmen zu.</li>
+			<li>Die Schnittstellen müssen genauer definiert werden, wenn mehr Entwickler an einem Projekt arbeiten.</li>
+			<li>Die Systeme müssen modularer abgegrenzt werden, so dass diese Komponenten einfacher austetauscht werden können.</li>
+		</ul>
+	</slide>
+
+	<slide>
+		<h1>Demos</h1>
+	</slide>
+
+	<slide>
+		<h2>run time vs compile time</h2>
+	</slide>
+
+	<slide>
+		<h2>dependency injection container</h2>
+		<p><a href="http://php-di.org/doc/getting-started.html" target="_blank">Beispiel</a></p>
+	</slide>
+
+	<slide>
+		<h2>constructor injection vs setter injection</h2>
+	</slide>
+
+	<slide>
+		<h3>Vorteile</h3>
+		<ul>
+			<li>Klassen lassen sich leichter austauschen</li>
+			<li>unit tests</li>
+			<li>injected classes können mit Einschränkungen leichter angepasst werden</li>
+			<li>Typisierung der injected classes sinnvoll</li>
+		</ul>
+	</slide>
+
+	<slide>
+		<h3>Nachteile</h3>
+		<ul>
+			<li>unter Umständen schwieriger zu verstehen</li>
+			<li>gut überlegen: was injected man auf welcher Ebene</li>
+			<li>dependency injection muss konsequent nach unten verfolgt werden</li>
+			<li>Fehler durch ducktyping werden erst zur Laufzeit entdeckt</li>
+		</ul>
+	</slide>
+
+	<slide>
+		<h2>Ziel</h2>
+		<p>Die schlimmsten Ausprägungen <a href="https://www.google.de/search?q=dependency+graph&biw=2560&bih=1368&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjszJD27anOAhVDShQKHbjQAKcQ_AUIBigB" target="_blank">davon</a> vermeiden.</p>
+	</slide>
+
+</presentation>
+
+<script src="build/ngSlides.js"></script>
+</body>
+</html>
