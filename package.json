@@ -1,24 +1,24 @@
 {
-	"name": "ngSlides",
+	"name": "ng-slides",
 	"version": "0.0.0",
 	"description": "main package.json for ngSlides project",
 	"main": "Gruntfile.js",
 	"private": true,
 	"dependencies": {
 		"angular": "^1.7.9",
-		"angular-touch": "~1.5",
-		"angular-sanitize": "~1.5",
-		"angular-animate": "~1.5",
+		"angular-touch": "~1.7",
+		"angular-sanitize": "~1.7",
+		"angular-animate": "~1.7",
 		"angular-clickout": "~1.0",
-		"angular-ui-bootstrap": "~1.0",
+		"angular-ui-bootstrap": "~1.1",
 		"angular-scroll": "~1.0"
 	},
 	"devDependencies": {
-		"grunt": "^1.0",
-		"grunt-contrib-concat": "^1.0",
-		"grunt-contrib-uglify": "^3.0",
+		"grunt": "^1.1.0",
 		"grunt-angular-templates": "^1.0.4",
+		"grunt-contrib-concat": "^1.0",
 		"grunt-contrib-jshint": "^2.1",
+		"grunt-contrib-uglify": "^4.0",
 		"grunt-file-exists": "~0.1",
 		"grunt-ng-annotate": "^3.0"
 	},
