@@ -20,7 +20,7 @@
 		"grunt-contrib-jshint": "^2.1",
 		"grunt-contrib-uglify": "^4.0",
 		"grunt-file-exists": "~0.1",
-		"grunt-ng-annotate": "^3.0"
+		"grunt-ng-annotate": "^4.0"
 	},
 	"author": ""
 }
